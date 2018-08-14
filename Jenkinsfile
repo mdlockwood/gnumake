@@ -7,8 +7,11 @@ pipeline {
           git(url: 'http://github.com/mdlockwood/gnumake.git', branch: 'master')
         }
         
-        sh 'ls -l'
-        sh 'ls -l /tmp/workspace'
+        sh 'tar xfv make-3.81.tar.gz'
+        sh 'configure --prefix=/usr/local'
+        sh 'make'
+        sh 'make install'
+        sh 'ls -l /usr/local/bin'
       }
     }
   }
