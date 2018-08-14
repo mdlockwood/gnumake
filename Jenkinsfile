@@ -6,7 +6,8 @@ pipeline {
         ws(dir: '/tmp/workspace') {
           git(url: 'http://github.com/mdlockwood/gnumake.git', branch: 'master')
         }
-        
+       
+        sh 'cd gnumake-3.81'
         sh 'tar xfv make-3.81.tar.gz'
         sh 'configure --prefix=/usr/local'
         sh 'make'
